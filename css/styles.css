@@ -90,6 +90,13 @@ html {
     padding: 0;
 }
 
+@media (min-width: 768px) {
+    .header-left {
+        flex-grow: 1;
+        min-width: 0;
+    }
+}
+
 .nav-list {
     display: flex;
     gap: 40px;
@@ -315,17 +322,24 @@ nav a:focus {
     font-style: normal;
 }
 
+
 @media (min-width: 768px) {
     .contacts {
         display: block;
-        margin-left: auto;
+    }
+
+    .contacts ul {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
 }
 
-@media (min-width: 768px) {
-    .header-left {
-        flex-grow: 1;
-        min-width: 0;
+
+@media (min-width: 1158px) {
+    .contacts ul {
+        flex-direction: row;
+        gap: 40px;
     }
 }
 
@@ -335,18 +349,6 @@ nav a:focus {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #434455;
-    text-decoration: none;
-}
-
-.contacts ul {
-    max-width: 100%;
-    min-width: 0;
-    display: flex;
-    gap: 16px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
 }
 
 .page-nav .link {
@@ -392,7 +394,14 @@ nav a:focus {
 }
 
 .team-card {
-   width: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 0px 0px 4px 4px;
+
+    box-shadow:
+        0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 @media screen and (min-width: 768px) {
@@ -469,12 +478,6 @@ nav a:focus {
     padding: 100px 0;
 }
 
-.footer-left,
-.footer-social,
-.footer-subscribe {
-    width: 100%;
-}
-
 .footer .logo {
     font-family: "Raleway", sans-serif;
     font-size: 18px;
@@ -498,8 +501,11 @@ nav a:focus {
     margin-top: 16px;
 }
 
-.footer-left {
-    max-width: 100%;
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+    align-items: flex-start;
 }
 
 .footer-left,
@@ -508,30 +514,20 @@ nav a:focus {
     width: 100%;
 }
 
-@media (min-width:768px) {
-
-    .footer-left,
-    .footer-social,
-    .footer-subscribe {
-        width: calc((100% - 24px) / 2);
-        flex: 0 0 calc((100% - 24px) / 2);
-    }
-}
-
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    gap: 72px;
-    align-items: flex-start;
-    width: 100%;
-}
-
 @media (min-width: 768px) {
     .footer-container {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 72px 24px;
-        justify-content: flex-start;
+    }
+
+    .footer-left,
+    .footer-social {
+        flex: 0 0 calc((100% - 24px) / 2);
+    }
+
+    .footer-subscribe {
+        width: 100%;
     }
 }
 
@@ -539,6 +535,12 @@ nav a:focus {
     .footer-container {
         flex-wrap: nowrap;
         gap: 120px;
+    }
+
+    .footer-left,
+    .footer-social,
+    .footer-subscribe {
+        flex: 0 0 auto;
     }
 }
 
@@ -570,10 +572,6 @@ nav a:focus {
 .footer-social-link:hover,
 .footer-social-link:focus {
     background-color: #31d0aa;
-}
-
-.footer-subscribe {
-    margin-left: 0;
 }
 
 
