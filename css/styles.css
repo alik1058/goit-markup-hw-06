@@ -650,11 +650,6 @@ nav a:focus {
     transform: translateY(0);
 }
 
-.portfolio-title {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 72px;
-}
 
 .portfolio-card img {
     display: block;
