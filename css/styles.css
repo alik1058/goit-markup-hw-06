@@ -31,9 +31,9 @@ a {
     color: inherit;
 }
 
-body {
-    font-family: "Roboto", sans-serif;
-    color: #2e2f42;
+
+html {
+    overflow-x: hidden;
 }
 
 .page-title {
@@ -74,6 +74,13 @@ body {
     align-items: center;
     justify-content: space-between;
     height: 72px;
+}
+
+@media (min-width: 768px) {
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .header-left {
@@ -177,12 +184,12 @@ body {
 .feature-list {
     display: flex;
     flex-direction: column;
-    gap: 72px;
+    gap: 48px;
 }
 
 .feature-item {
     width: 100%;
-    max-width: 100%;
+    flex: 0 0 100%;
 }
 
 @media (min-width:768px) {
@@ -195,6 +202,7 @@ body {
 
     .feature-item {
         width: calc((100% - 24px) / 2);
+        flex: 0 0 calc((100% - 24px) / 2);
     }
 
 }
@@ -208,6 +216,7 @@ body {
 
     .feature-item {
         width: calc((100% - 72px) / 4);
+        flex: 0 0 calc((100% - 72px) / 4);
     }
 
 }
@@ -301,8 +310,23 @@ nav a:focus {
 
 
 .contacts {
+    display: none;
     margin-left: auto;
     font-style: normal;
+}
+
+@media (min-width: 768px) {
+    .contacts {
+        display: block;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .header-left {
+        flex-grow: 1;
+        min-width: 0;
+    }
 }
 
 .contacts a {
@@ -315,8 +339,10 @@ nav a:focus {
 }
 
 .contacts ul {
+    max-width: 100%;
+    min-width: 0;
     display: flex;
-    gap: 40px;
+    gap: 16px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -443,6 +469,12 @@ nav a:focus {
     padding: 100px 0;
 }
 
+.footer-left,
+.footer-social,
+.footer-subscribe {
+    width: 100%;
+}
+
 .footer .logo {
     font-family: "Raleway", sans-serif;
     font-size: 18px;
@@ -462,18 +494,28 @@ nav a:focus {
 .footer-text {
     line-height: 1.5;
     color: #f4f4fd;
-    max-width: 264px;
+    max-width: 100%;
     margin-top: 16px;
 }
 
 .footer-left {
-    max-width: 264px;
+    max-width: 100%;
 }
 
 .footer-left,
 .footer-social,
 .footer-subscribe {
     width: 100%;
+}
+
+@media (min-width:768px) {
+
+    .footer-left,
+    .footer-social,
+    .footer-subscribe {
+        width: calc((100% - 24px) / 2);
+        flex: 0 0 calc((100% - 24px) / 2);
+    }
 }
 
 .footer-container {
@@ -532,14 +574,8 @@ nav a:focus {
 
 .footer-subscribe {
     margin-left: 0;
-    
 }
 
-@media (min-width: 1158px) {
-    .footer-subscribe {
-        margin-left: 80px;
-    }
-}
 
 .portfolio-title {
     text-align: center;
@@ -984,9 +1020,6 @@ img {
     display: none;
 }
 
-.contacts {
-    display: none;
-}
 
 @media (min-width: 768px) {
     .menu-toggle {
@@ -995,10 +1028,6 @@ img {
 
     .page-nav {
         display: flex;
-    }
-
-    .contacts {
-        display: block;
     }
 }
 
@@ -1064,7 +1093,9 @@ img {
 
 .mobile-social {
     display: flex;
-    gap: 40px;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
 }
 
 .mobile-social svg {
