@@ -469,6 +469,12 @@ nav a:focus {
     }
 }
 
+
+
+.logo-web {
+    color: #4d5ae5;
+}
+
 .logo-accent {
     color: #4d5ae5;
 }
@@ -482,13 +488,10 @@ nav a:focus {
     font-family: "Raleway", sans-serif;
     font-size: 18px;
     font-weight: 700;
-    letter-spacing: 0.03em;
+    letter-spacing: 0, 03em;
     color: #ffffff;
 }
 
-.logo-web {
-    color: #4d5ae5;
-}
 
 .footer .logo-accent {
     color: #4d5ae5;
@@ -497,51 +500,19 @@ nav a:focus {
 .footer-text {
     line-height: 1.5;
     color: #f4f4fd;
-    max-width: 100%;
+    max-width: 264px;
     margin-top: 16px;
+}
+
+.footer-left {
+    max-width: 264px;
 }
 
 .footer-container {
     display: flex;
     flex-direction: column;
-    gap: 72px;
     align-items: flex-start;
-}
-
-.footer-left,
-.footer-social,
-.footer-subscribe {
-    width: 100%;
-}
-
-@media (min-width: 768px) {
-    .footer-container {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 72px 24px;
-    }
-
-    .footer-left,
-    .footer-social {
-        flex: 0 0 calc((100% - 24px) / 2);
-    }
-
-    .footer-subscribe {
-        width: 100%;
-    }
-}
-
-@media (min-width: 1158px) {
-    .footer-container {
-        flex-wrap: nowrap;
-        gap: 120px;
-    }
-
-    .footer-left,
-    .footer-social,
-    .footer-subscribe {
-        flex: 0 0 auto;
-    }
+    gap: 72px;
 }
 
 .footer-title {
@@ -572,6 +543,38 @@ nav a:focus {
 .footer-social-link:hover,
 .footer-social-link:focus {
     background-color: #31d0aa;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 72px 24px;
+    }
+
+    .footer-left,
+    .footer-social {
+        flex: 0 0 calc((100% - 24px) / 2);
+    }
+
+    .footer-subscribe {
+        flex: 0 0 100%;
+    }
+}
+
+@media (min-width: 1158px) {
+    .footer-container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 120px;
+        align-items: baseline;
+    }
+
+    .footer-left,
+    .footer-social,
+    .footer-subscribe {
+        flex: 0 0 auto;
+    }
 }
 
 
@@ -650,7 +653,6 @@ nav a:focus {
     transform: translateY(0);
 }
 
-
 .portfolio-card img {
     display: block;
     width: 100%;
@@ -685,12 +687,19 @@ nav a:focus {
     flex-direction: column;
 }
 
+@media (min-width: 1158px) {
+    .subscribe-form {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
 .subscribe-input {
-    width: 100%;
+    width: 264px;
     height: 40px;
     padding-left: 16px;
     background-color: transparent;
-    border: 1px solid #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 4px;
     color: #ffffff;
 }
